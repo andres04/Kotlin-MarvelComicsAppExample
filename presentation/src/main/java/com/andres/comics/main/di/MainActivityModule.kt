@@ -13,9 +13,10 @@ import dagger.Module
  * Created by andres.escobar on 9/10/2017.
  */
 @Module(subcomponents = arrayOf(MainActivitySubcomponent::class))
-abstract class MainModule {
+abstract class MainActivityModule {
     @Binds
     @IntoMap
     @ActivityKey(MainActivity::class)
     internal abstract fun bindMainActivityInjectorFactory(builder: MainActivitySubcomponent.Builder): AndroidInjector.Factory<out Activity>
+
 }

@@ -1,8 +1,9 @@
-package com.andres.comics.application
+package com.andres.comics.app
 
 import android.app.Activity
 import android.app.Application
-import com.andres.comics.main.di.DaggerMainComponent
+import com.andres.comics.app.di.DaggerAppComponent
+//import com.andres.comics.main.di.DaggerMainComponent
 import dagger.android.AndroidInjector
 import dagger.android.HasActivityInjector
 import dagger.android.DispatchingAndroidInjector
@@ -20,11 +21,11 @@ class App : Application(), HasActivityInjector{
 
     override fun onCreate() {
         super.onCreate()
-        DaggerMainComponent.create()
+        DaggerAppComponent.create().inject(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return dispatchingActivityInjector
     }
 
 
