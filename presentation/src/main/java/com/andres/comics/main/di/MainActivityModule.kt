@@ -1,22 +1,22 @@
 package com.andres.comics.main.di
 
-import android.app.Activity
 import com.andres.comics.main.MainActivity
-import dagger.android.AndroidInjector
-import dagger.android.ActivityKey
-import dagger.multibindings.IntoMap
-import dagger.Binds
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
+import com.andres.comics.main.MainFragment
+import com.andres.comics.app.di.scopes.PerFragment
+
+
 
 
 /**
  * Created by andres.escobar on 9/10/2017.
  */
-@Module(subcomponents = arrayOf(MainActivitySubcomponent::class))
+@Module
 abstract class MainActivityModule {
-    @Binds
-    @IntoMap
-    @ActivityKey(MainActivity::class)
-    internal abstract fun bindMainActivityInjectorFactory(builder: MainActivitySubcomponent.Builder): AndroidInjector.Factory<out Activity>
+
+    @PerFragment
+    @ContributesAndroidInjector(modules = arrayOf(MainFragmentModule::class))
+    internal abstract fun mainFragmentInjector(): MainFragment
 
 }
