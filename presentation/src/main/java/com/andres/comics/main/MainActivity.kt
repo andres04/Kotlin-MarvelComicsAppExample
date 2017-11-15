@@ -2,7 +2,6 @@ package com.andres.comics.main
 
 import android.app.Fragment
 import android.os.Bundle
-import butterknife.ButterKnife
 import com.andres.comics.R
 import com.andres.comics.common.BaseActivity
 import dagger.android.AndroidInjection
@@ -21,7 +20,6 @@ class MainActivity : BaseActivity(), HasFragmentInjector {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
         var fragment = MainFragment()
         fragmentManager.beginTransaction().replace(R.id.flt_main, fragment).commit()
     }
