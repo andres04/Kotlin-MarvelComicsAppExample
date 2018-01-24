@@ -7,6 +7,6 @@ import com.andres.comics.common.BaseView
  */
 interface LoginView : BaseView {
 
-    abstract fun onLol(message: String)
+    fun onLol(message: String)
 
 }

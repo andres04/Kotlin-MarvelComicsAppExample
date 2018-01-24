@@ -19,9 +19,9 @@ class LoginActivity : BaseActivity(), HasFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         var fragment = LoginFragment()
-        fragmentManager.beginTransaction().replace(R.id.flt_main, fragment).commit()
+        fragmentManager.beginTransaction().replace(R.id.flt_login, fragment).commit()
     }
 
     override fun fragmentInjector(): AndroidInjector<Fragment> {

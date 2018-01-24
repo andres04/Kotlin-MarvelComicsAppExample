@@ -14,8 +14,8 @@ import dagger.Module
 abstract class LoginFragmentModule {
 
     @Binds
-    abstract fun provideMainView(loginFragment: LoginFragment) : LoginView
+    abstract fun provideLoginView(loginFragment: LoginFragment) : LoginView
 
     @Binds
-    abstract fun provideMainPresenter(mainPresenterImpl: LoginPresenterImpl) : LoginPresenter
+    abstract fun provideLoginPresenter(mainPresenterImpl: LoginPresenterImpl) : LoginPresenter
 }
